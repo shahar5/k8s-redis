@@ -19,12 +19,12 @@ Kubernets dployment for standalone Redis, which enables Redis authentication and
 2. redis-cli
 3. Try to implemet any db interaction (such as 'set foo 100') - you should get error message: 
 ```
-![alt text](https://github.com/shahar5/k8s-redis/Pics_for_README.md/auth_err.PNG)
+![alt text](https://github.com/shahar5/k8s-redis/main/Pics_for_README.md/auth_err.PNG)
 ```
 4. Authenticate with - auth <your_password>
 ```
-![alt text](https://github.com/shahar5/k8s-redis/Pics_for_README.md/auth_ok.PNG)
+![alt text](https://github.com/shahar5/k8s-redis/main/Pics_for_README.md/auth_ok.PNG)
 ```
 5. Validate Log-Level set to Dbug mode - config get loglevel
 ```
-![alt text](https://github.com/shahar5/k8s-redis/Pics_for_README.md/log_level.PNG)
+![alt text](https://github.com/shahar5/k8s-redis/main/Pics_for_README.md/log_level.PNG)
