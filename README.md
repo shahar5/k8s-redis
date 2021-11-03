@@ -15,7 +15,7 @@ Kubernets dployment for standalone Redis, which enables Redis authentication and
 
 ### Validation
 ```
-1. kubectl xec --stdin --tty $(pod) -- /bin/bash
+1. kubectl exec --stdin --tty $(pod) -- /bin/bash
 2. redis-cli
 3. Try to implemet any db interaction (such as 'set foo 100') - you should get error message: 
 ```
