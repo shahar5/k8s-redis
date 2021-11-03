@@ -25,6 +25,6 @@ Kubernets dployment for standalone Redis, which enables Redis authentication and
 ```
 ![alt text](https://github.com/shahar5/k8s-redis/blob/main/Pics_for_README.md/auth_ok.PNG)
 ```
-5. Validate Log-Level set to Dbug mode - config get loglevel
+5. Validate Log-Level set to Debug mode - config get loglevel
 ```
 ![alt text](https://github.com/shahar5/k8s-redis/blob/main/Pics_for_README.md/log_level.PNG)
