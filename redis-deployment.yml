@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-depl
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        env:
+          - name: REDIS-PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: redis-secret
+                key: redis-password
+          - name: REDIS-CONFIG
+            valueFrom:
+              configMapKeyRef:
+                name: redis-configmap
+                key: redis-conf-file
+        volumeMounts:
+          - name: redis-config
+            mountPath: /data
+        command:
+          - redis-server
+        args:
+          - $(REDIS-CONFIG)
+          - --requirepass
+          - $(REDIS-PASSWORD)
+        ports:
+        - containerPort: 6379
+      volumes:
+        - name: redis-config
+          configMap:
+            name: redis-configmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+spec:
+  selector:
+    app: redis
+  ports:
+    - protocol: TCP
+      port: 6379
+      targetPort: 6379

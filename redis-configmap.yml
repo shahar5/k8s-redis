@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-configmap
+data:
+  redis-conf-file: redis.conf
+  redis.conf: |
+    bind 127.0.0.1
+    port 6379
+    loglevel debug
