@@ -1,5 +1,5 @@
 # k8s-redis
-Kubernets dployment for standalone Redis server, which enables Redis authentication and uses a custom redis.conf file for configuration
+Kubernets deployment for standalone Redis server, which enables Redis authentication and uses a custom redis.conf file for configuration
 
 ### prerequisites
 - Docker
